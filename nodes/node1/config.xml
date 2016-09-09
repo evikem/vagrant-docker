@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<slave>
+  <name>Node1</name>
+  <description>node1</description>
+  <remoteFS>~/jenkins</remoteFS>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>
+  <launcher class="hudson.plugins.sshslaves.SSHLauncher" plugin="ssh-slaves@1.11">
+    <host>vagrant_jenkinss1_1</host>
+    <port>22</port>
+    <credentialsId>dfbafd9f-f029-45c1-9894-a57fcaedae7c</credentialsId>
+    <javaPath>/opt/jdk1.8.0_77/bin/java</javaPath>
+    <maxNumRetries>0</maxNumRetries>
+    <retryWaitTime>0</retryWaitTime>
+  </launcher>
+  <label>node1</label>
+  <nodeProperties/>
+</slave>
+

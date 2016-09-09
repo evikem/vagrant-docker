@@ -1,0 +1,15 @@
+    version: '2'
+    services:
+        jenkinsm:
+             build: /vagrant/jenkins_master
+             ports:
+                - "8081:8080"
+             volumes:
+                - /home/vagrant/jobs/:/opt/jenkins/jobs
+                - /home/vagrant/nodes/:/opt/jenkins/nodes
+                - /home/vagrant/credentials.xml:/opt/jenkins/credentials.xml
+             depends_on:
+                - jenkinss1
+                
+        jenkinss1:
+             build: /vagrant/jenkins_slave
